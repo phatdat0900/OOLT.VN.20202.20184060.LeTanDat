@@ -27,7 +27,7 @@ public class Aims {
 		anOrder.removeDigitalVideoDisc(dvd3);
 		System.out.print("total cost is: ");
 		System.out.println(anOrder.totalCost());
-		assert Order.removeItem != dvd3:"error"; 
+		assert Order.removeItem == dvd3:"error"; 
 
 	}
 }

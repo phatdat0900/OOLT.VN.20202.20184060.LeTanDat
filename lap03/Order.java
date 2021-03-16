@@ -19,9 +19,9 @@ public class Order {
 				if (disc == itemsOrdered[i]) {
 					if (disc.getTitle().equals(itemsOrdered[i].getTitle())) {
 						for (j = i; j < n; j++) {
-							// removeItem = itemsOrdered[j];
+							 removeItem = itemsOrdered[j];
 							itemsOrdered[j] = itemsOrdered[j + 1];
-						//System.out.println(removeItem.getTitle());
+						System.out.println(removeItem.getTitle());
 						}
 
 					}
@@ -35,7 +35,6 @@ public class Order {
 	static float totalCost() {
 		float count = 0;
 		for (int i = 0; i < MAX_NUMBERS_ORDERED; i++) {
-			// assert itemsOrdered[i]!= null:"error";
 			if (itemsOrdered[i] != null) {
 				count += itemsOrdered[i].getCost();
 			}	
