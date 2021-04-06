@@ -33,15 +33,23 @@ public class Aims {
 		return null;
 	}
 
+	public static boolean checkId(int id) {
+		for (Media a : item) {
+			if (item.indexOf(a.getMedia(id)) != -1) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+
 	public static void main(String[] args) {
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("the Lion King", "Animation", "Roger Allers", 87, 19.95f);
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 124, 24.95f);
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", "John Musker", 90, 18.99f);
-		Book book1 = new Book("One Piece", "Action","Oda", 18.99f);
-		Book book2 = new Book("Harry Porter P1", "Adventure","JK", 18.99f);
-	
-		
-		
+		Book book1 = new Book("One Piece", "Action", "Oda", 18.99f);
+		Book book2 = new Book("Harry Porter P1", "Adventure", "JK", 18.99f);
+
 		item.add(dvd1);
 		item.add(dvd2);
 		item.add(dvd3);
@@ -68,11 +76,11 @@ public class Aims {
 				break;
 			case 1:
 				i++;
-				if(i<5) {
-				anOrder[i] = new Order();
-				System.out.println("You have make an order ID:" + anOrder[i].getOrderId());
-				break;}
-				else {
+				if (i < 5) {
+					anOrder[i] = new Order();
+					System.out.println("You have make an order ID:" + anOrder[i].getOrderId());
+					break;
+				} else {
 					System.out.println("You can make 5 orders only");
 					break;
 				}
@@ -80,12 +88,14 @@ public class Aims {
 				if (i > -1) {
 					System.out.println("Enter object id:");
 					idItem = scan.nextInt();
-					if(idItem != getItem(idItem).getId()) {
-						System.out.println("khong tim thay");
+					if (checkId(idItem)) {
+						anOrder[i].addMedia(getItem(idItem));
+						break;
+					} else {
+						System.out.println("Can't find this item");
+						break;
 					}
-					anOrder[i].addMedia(getItem(idItem));
-					break;
-				}else {
+				} else {
 					System.out.println("You haven't make an order");
 					break;
 				}
@@ -93,11 +103,13 @@ public class Aims {
 			case 3:
 				System.out.println("Enter object id:");
 				idItem = scan.nextInt();
-				if(idItem != getItem(idItem).getId()) {
-					System.out.println("khong tim thay");
+				if (checkId(idItem)) {
+					anOrder[i].removeMedia(getItem(idItem));
+					break;
+				} else {
+					System.out.println("Can't find this item");
+					break;
 				}
-				anOrder[i].removeMedia(getItem(idItem));
-				break;
 			case 4:
 				anOrder[i].showOrder();
 				break;

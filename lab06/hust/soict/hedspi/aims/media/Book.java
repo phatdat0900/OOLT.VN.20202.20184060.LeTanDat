@@ -48,7 +48,7 @@ public class Book extends Media {
 
 	}
 	public void Print() {
-		System.out.printf(" ID:%-2d |%-25s|%-25s|%-25s|%-7.2f$\n",this.getId() ,this.getTitle(),this.getCategory(),this.getAuthors(),this.getCost());
+		System.out.printf("ID:%-2d |%-25s|%-25s|%-25s|%-7.2f$\n",this.getId() ,this.getTitle(),this.getCategory(),this.getAuthors(),this.getCost());
 	}
 
 }

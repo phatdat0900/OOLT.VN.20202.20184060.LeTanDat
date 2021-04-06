@@ -110,11 +110,12 @@ public class Order {
 		System.out.println("***********************Order***********************");
 		for (Media a : this.itemsOrdered) {
 			i++;
+			System.out.printf(i+". ");
 			a.Print();
 		}
 		System.out.println(this.totalCost());
 
-		System.out.println("**************************************************");
+		System.out.println("***************************************************");
 	}
 
 	public float totalCost() {

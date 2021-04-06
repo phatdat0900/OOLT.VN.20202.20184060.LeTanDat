@@ -60,7 +60,7 @@ public class DigitalVideoDisc extends Media {
 	}
 	
 	public void Print() {
-		System.out.printf(" ID:%-2d |%-25s|%-25s|%-25s|%-25d|%-7.2f$\n",super.getId() ,super.getTitle(),super.getCategory(),super.getDirector(),this.getLength(),super.getCost());
+		System.out.printf("ID:%-2d |%-25s|%-25s|%-25s|%-25d|%-7.2f$\n",super.getId() ,super.getTitle(),super.getCategory(),super.getDirector(),this.getLength(),super.getCost());
 	}
 
 }
